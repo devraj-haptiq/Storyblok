@@ -1,4 +1,4 @@
-import { RecomendedTour } from "../components/RecomendedTour";
+import { RecomendedTours } from "@/components/RecomendedTours";
 import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 
 // Add this line to make the page dynamic, resolving the build error
@@ -30,7 +30,7 @@ const ToursPage = async () => {
       <StoryblokStory story={story} />
       {tours.map((tour) => {
         // Assuming RecomendedTour is set up to receive the full story object
-        return <RecomendedTour story={tour} key={tour.uuid} />;
+        return <RecomendedTours story={tour} key={tour.uuid} />;
       })}
     </div>
   );
