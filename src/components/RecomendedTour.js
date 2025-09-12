@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const RecomendedTour = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <div>

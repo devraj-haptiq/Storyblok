@@ -1,7 +1,7 @@
 import { RecomendedTour } from "./RecomendedTour";
 
 export const RecomendedTours = (params) => {
-  console.log(params);
+  // console.log(params);
 
   return (
     <section>
