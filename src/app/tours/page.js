@@ -1,15 +1,20 @@
-import { RecomendedTour } from "@/components/RecomendedTour";
+import { RecomendedTour } from "../components/RecomendedTour";
 import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
+
+// Add this line to make the page dynamic, resolving the build error
+export const dynamic = "force-dynamic";
 
 const fetchToursPage = async () => {
   const client = getStoryblokApi();
-  const response = await client.getStory("tours", { version: "draft" });
+  // Use the generic 'get' method with the correct API path
+  const response = await client.get(`cdn/stories/tours`, { version: "draft" });
   return response.data.story;
 };
 
 const fetchAllTours = async () => {
   const client = getStoryblokApi();
-  const response = await client.getStories({
+  // Use the generic 'get' method here as well
+  const response = await client.get(`cdn/stories`, {
     content_type: "tour",
     version: "draft",
   });
@@ -24,7 +29,8 @@ const ToursPage = async () => {
     <div>
       <StoryblokStory story={story} />
       {tours.map((tour) => {
-        return <RecomendedTour story={tour} key={tour.content._uid} />;
+        // Assuming RecomendedTour is set up to receive the full story object
+        return <RecomendedTour story={tour} key={tour.uuid} />;
       })}
     </div>
   );
