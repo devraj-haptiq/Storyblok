@@ -21,7 +21,7 @@ const HomePage = async () => {
   const story = await fetchHomePage();
   return (
     <StoryblokStory
-      bridgeOptions={{ resolve_relations: ["reccomended_tours.tours"] }}
+      bridgeOptions={{ resolveRelations: ["reccomended_tours.tours"] }}
       story={story}
     />
   );
