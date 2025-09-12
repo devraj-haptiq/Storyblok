@@ -5,7 +5,7 @@ import { draftMode } from "next/headers";
 // This resolves the conflict with the static build process.
 
 const fetchHomePage = async () => {
-  const isEnabled = draftMode();
+  const { isEnabled } = draftMode();
   const client = getStoryblokApi();
   const response = await client.get(`cdn/stories/home`, {
     version:
