@@ -1,4 +1,4 @@
-import { getStoryblokApi, StoryblokStory } from "@storyblok/react";
+import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 
 // This one line tells Next.js to always render this page on a server.
 // This resolves the conflict with the static build process.
