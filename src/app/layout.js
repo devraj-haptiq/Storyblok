@@ -18,7 +18,7 @@ const geistSans = Geist({
 const cachedFetch = (input, init) => {
   return fetch(input, {
     ...init,
-    cache: "no-store",
+    cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
   });
 };
 
