@@ -1,6 +1,6 @@
 "use client";
 
-import { apiPlugin, storyblokInit } from "@storyblok/react/";
+import { apiPlugin, storyblokInit } from "@storyblok/react";
 import { Tour } from "./Tour";
 import { Page } from "./Page";
 import { Hero } from "./Hero";
@@ -9,6 +9,10 @@ import { Grid } from "./grid";
 import { Feature } from "./Feature";
 import { Testimonial } from "./Testimonial";
 import { RecomendedTours } from "./RecomendedTours";
+import { Header } from "./Header";
+import ReviewInfo from "./ReviewInfo";
+import Carousel from "./Carousel";
+import Article from "./Article";
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
@@ -21,6 +25,10 @@ storyblokInit({
     feature: Feature,
     testimonial: Testimonial,
     reccmended_tours: RecomendedTours,
+    header: Header,
+    review_info: ReviewInfo,
+    carousel: Carousel,
+    article: Article,
   },
   enableFallbackComponents: true,
 });
