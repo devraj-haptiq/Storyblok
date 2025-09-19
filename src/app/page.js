@@ -4,7 +4,7 @@ import { draftMode } from "next/headers";
 const fetchHomePage = async () => {
   const { isEnabled } = draftMode();
   const client = getStoryblokApi();
-  const response = await client.get(`cdn/stories/home`, {
+  const response = await client.getStories(``, {
     version:
       process.env.NODE_ENV === "development" || isEnabled
         ? "draft"
@@ -18,8 +18,8 @@ const HomePage = async () => {
   const story = await fetchHomePage();
   return (
     <StoryblokStory
-      bridgeOptions={{ resolveRelations: ["reccomended_tours.tours"] }}
       story={story}
+      bridgeOptions={{ resolveRelations: ["reccomended_tours.tours"] }}
     />
   );
 };

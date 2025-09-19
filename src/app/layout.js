@@ -18,6 +18,8 @@ import { RecomendedTours } from "@/components/RecomendedTours";
 import { Header } from "@/components/Header";
 import { NavLink } from "@/components/NavLink";
 import ReviewInfo from "@/components/ReviewInfo";
+import Carousel from "@/components/Carousel";
+import Article from "@/components/Article";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,6 +63,8 @@ storyblokInit({
     Header: Header,
     navlinks: NavLink,
     review_info: ReviewInfo,
+    carousel: Carousel,
+    article: Article,
   },
   use: [apiPlugin],
   apiOptions: {

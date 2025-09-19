@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
+
+@theme {
+  --color-dark-blue-header: #19345e;
+  --color-gray-text: #323232;
+  --color-border-gray: #bbbbbb;
+  --color-blue: #0066cc;
+}

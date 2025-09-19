@@ -12,10 +12,12 @@ const ReviewInfo = ({ blok }) => {
   const ratingoutof5 = Math.round(ratingoutof10 / 2);
 
   return (
-    <div className="flex flex-col md:flex-row gap-x-8 items-start m-8 py-4 px-8 shadow-lg shadow-[#DAE4E9] rounded-lg">
+    <div className="flex flex-col md:flex-row gap-y-3 md:gap-x-8 items-start m-[20px] md:m-8 p-4 md:py-4 md:px-8 border border-[#DAE4E9] shadow-lg shadow-[#DAE4E9] rounded-lg max-w-[1317px]">
       <div className="flex flex-col gap-y-2 md:w-[200px]">
-        <h2 className="text-2xl font-bold">{blok.title}</h2>
-        <div className="py-1 flex flex-row items-center">
+        <h2 className="text-2xl font-bold leading-8 text-[#222222]">
+          {blok.title}
+        </h2>
+        <div className=" flex flex-row items-center">
           {Array(5)
             .fill(0)
             .map((_, index) => {
@@ -34,7 +36,7 @@ const ReviewInfo = ({ blok }) => {
       </div>
       <div
         dangerouslySetInnerHTML={{ __html: renderRichText(blok.description) }}
-        className="flex-1 ml-auto text-[16px] font-normal leading-[20px] tracking-normal text-[#222222] "
+        className="flex-1 ml-auto text-[15px] font-normal leading-[20px] tracking-normal text-[#222222] "
       ></div>
     </div>
   );

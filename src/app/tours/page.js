@@ -30,6 +30,7 @@ const fetchAllTours = async () => {
 const ToursPage = async () => {
   const story = await fetchToursPage();
   const tours = await fetchAllTours();
+  console.log(tours);
 
   return (
     <div>

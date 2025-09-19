@@ -11,6 +11,8 @@ import { Testimonial } from "./Testimonial";
 import { RecomendedTours } from "./RecomendedTours";
 import { Header } from "./Header";
 import ReviewInfo from "./ReviewInfo";
+import Carousel from "./Carousel";
+import Article from "./Article";
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
@@ -25,6 +27,8 @@ storyblokInit({
     reccmended_tours: RecomendedTours,
     header: Header,
     review_info: ReviewInfo,
+    carousel: Carousel,
+    article: Article,
   },
   enableFallbackComponents: true,
 });
