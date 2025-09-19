@@ -17,8 +17,13 @@ const fetchArticlePage = async (slug) => {
 };
 
 const ArticlesPage = async ({ params }) => {
-  // Using destructuring for cleaner code
-  const story = await fetchArticlePage(params.slug);
+  const { slug } = await params;
+  const story = await fetchArticlePage(slug);
+
+  if (!story) {
+    return <h1>Page not found.</h1>;
+  }
+
   return <StoryblokStory story={story} />;
 };
 

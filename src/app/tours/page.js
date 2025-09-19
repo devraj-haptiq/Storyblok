@@ -3,7 +3,7 @@ import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 import { draftMode } from "next/headers";
 
 const fetchToursPage = async () => {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStory("tours", {
     version:
@@ -18,7 +18,7 @@ const fetchAllTours = async () => {
   const { isEnabled } = draftMode();
   const client = getStoryblokApi();
   const response = await client.getStories({
-    content_type: "tour",
+    content_type: "page",
     version:
       process.env.NODE_ENV === "development" || isEnabled
         ? "draft"
@@ -30,7 +30,9 @@ const fetchAllTours = async () => {
 const ToursPage = async () => {
   const story = await fetchToursPage();
   const tours = await fetchAllTours();
-  console.log(tours);
+  if (!story) {
+    return <h1>Page not found.</h1>;
+  }
 
   return (
     <div>

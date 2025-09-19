@@ -11,6 +11,9 @@ export const fetchInfoPage = async () => {
 
 const InfoPage = async () => {
   const story = await fetchInfoPage();
+  if (!story) {
+    return <h1>Page not found.</h1>;
+  }
   return <StoryblokComponent blok={story.content} />;
 };
 

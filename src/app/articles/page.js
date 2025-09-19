@@ -12,6 +12,9 @@ const fetchArticlePage = async () => {
 
 const ArticlePage = async () => {
   const story = await fetchArticlePage();
+  if (!story) {
+    return <h1>Page not found.</h1>;
+  }
   return <StoryblokStory story={story} />;
 };
 
